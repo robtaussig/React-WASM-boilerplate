@@ -1,3 +1,5 @@
+A large portion of this boilerplate was built at the guidance of this article: https://prestonrichey.com/blog/react-rust-wasm/
+
 ## Getting Started
 
 #### Clone Repo
