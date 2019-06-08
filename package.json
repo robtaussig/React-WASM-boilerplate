@@ -8,6 +8,7 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
+    "setup-rust": "node bin/setup.js",
     "build-wasm": "cd wasm && wasm-pack build",
     "link-wasm": "cd wasm/pkg && npm link && cd ../ && npm link wasm",
     "start": "react-app-rewired start",
