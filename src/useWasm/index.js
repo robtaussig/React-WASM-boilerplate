@@ -7,7 +7,7 @@ export const WASM_READY_STATE = {
   READY: 1,
 };
 
-export const useLoadWasm = () => {
+export const useWasm = () => {
   const [wasmObject, setWasmObject] = useState({ wasm: null, readyState: WASM_READY_STATE.NOT_READY });
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export const useLoadWasm = () => {
   return [WasmContext.Provider, wasmObject];
 };
 
-export const useWasm = () => {
+export const useLoadedWasm = () => {
   const { wasm, readyState } = useContext(WasmContext);
 
   return { wasm, readyState };

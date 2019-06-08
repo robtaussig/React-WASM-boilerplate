@@ -1,8 +1,8 @@
 import React from 'react';
-import { useLoadWasm, useWasm, WASM_READY_STATE } from './useWasm';
+import { useWasm, useLoadedWasm, WASM_READY_STATE } from './useWasm';
 
 const TestComponent = () => {
-  const { wasm, readyState } = useWasm();
+  const { wasm, readyState } = useLoadedWasm();
 
   return (
     <div>
@@ -12,7 +12,7 @@ const TestComponent = () => {
 };
 
 const App = () => {
-  const [WasmProvider, wasmObject] = useLoadWasm();
+  const [WasmProvider, wasmObject] = useWasm();
 
   return (
     <WasmProvider value={wasmObject}>
