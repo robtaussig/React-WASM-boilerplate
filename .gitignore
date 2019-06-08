@@ -11,6 +11,9 @@
 # production
 /build
 
+#wasm
+/wasm/target
+
 # misc
 .DS_Store
 .env.local

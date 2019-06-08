@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useLoadWasm, useWasm, WASM_READY_STATE } from './useWasm';
 
-function App() {
+const TestComponent = () => {
+  const { wasm, readyState } = useWasm();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={wasm.greet}>Click</button>
     </div>
   );
-}
+};
+
+const App = () => {
+  const [WasmProvider, wasmObject] = useLoadWasm();
+
+  return (
+    <WasmProvider value={wasmObject}>
+      <div id="App">
+        {wasmObject.readyState === WASM_READY_STATE.READY && <TestComponent/>}
+      </div>
+    </WasmProvider>
+  );
+};
 
 export default App;
