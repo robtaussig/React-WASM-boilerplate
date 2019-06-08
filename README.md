@@ -13,6 +13,7 @@ npm install
 ```
 
 #### Setup Rust
+This can take a while and might appear to have hung if none of the dependencies have been installed to your machine before.
 ```
 npm run setup-rust
 ```
