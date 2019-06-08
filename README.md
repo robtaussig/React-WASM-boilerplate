@@ -36,7 +36,7 @@ npm start
 ```
 
 ## Writing Rust code
-With the code below, wasm.greet will be available in javascript.
+With the code below, wasm.greet will be available in javascript. All changes must be compiled with `npm run build-wasm` before reflecting in the client.
 
 ```
 //wasm/src/lib
@@ -83,4 +83,4 @@ const TestComponent = () => {
 
 ```
 ## Developing
-Changes to your javascript code will hot-reload your app if it's running -- otherwise they will be built at the npm run command. Changes to your Rust code must be compiled to wasm before they are accessible to the client. This must be done manually with npm run build-wasm.
+Changes to your javascript code will hot-reload your app if it's running -- otherwise they will be built at the `npm start` command. Changes to your Rust code must be compiled to wasm before they are accessible to the client. This must be done manually with `npm run build-wasm`.
