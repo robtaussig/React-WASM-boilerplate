@@ -57,10 +57,10 @@ The wasm object to be used must be fetched and compiled asyncronously, and thus 
 
 ```
 import React from 'react';
-import { useLoadWasm, useWasm, WASM_READY_STATE } from './useWasm';
+import { useWasm, useLoadedWasm, WASM_READY_STATE } from './useWasm';
 
 const App = () => {
-  const [WasmProvider, wasmObject] = useLoadWasm();
+  const [WasmProvider, wasmObject] = useWasm();
 
   return (
     <WasmProvider value={wasmObject}>
@@ -72,7 +72,7 @@ const App = () => {
 };
 
 const TestComponent = () => {
-  const { wasm, readyState } = useWasm();
+  const { wasm, readyState } = useLoadedWasm();
 
   return (
     <div>
