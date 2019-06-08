@@ -8,11 +8,12 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-   "start": "react-app-rewired start",
-   "build": "react-app-rewired build",
-   "build-wasm": "cd wasm && wasm-pack build",
-   "test": "react-app-rewired test",
-   "eject": "react-scripts eject"
+    "build-wasm": "cd wasm && wasm-pack build",
+    "link-wasm": "cd wasm/pkg && npm link && cd ../ && npm link wasm",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
